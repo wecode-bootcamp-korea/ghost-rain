@@ -21,6 +21,12 @@ function create() {
 
 function move() {
   enemyTop++;
+
+  if (enemyTop > BG_HEIGHT - GHOST_HEIGHT) {
+    ghostElement.remove();
+    return;
+  }
+
   ghostElement.style.top = enemyTop + 'px';
 
   window.requestAnimationFrame(move);
