@@ -1,0 +1,11 @@
+#bg {
+  position: relative;
+
+  width: 800px;
+  height: 500px;
+
+  background: url('./images/bg.png') no-repeat;
+  background-size: cover;
+
+  margin: 0 auto;
+}
