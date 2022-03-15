@@ -19,28 +19,32 @@ function init() {
   );
 
   setInterval(function () {
-    initGhosts();
+    initGhost();
   }, 2000);
 
-  window.requestAnimationFrame(loop);
+  window.requestAnimationFrame(updateAllghosts);
 }
 
-function checkKey(e, value) {
-  const keyID = e.keyCode || e.which;
+function checkKey(e, isMoving) {
+  if (isMoving) {
+    const keyID = e.keyCode || e.which;
 
-  switch (keyID) {
-    case 39: //right
-      player.isRightKey = value;
-      e.preventDefault();
-      break;
-    case 37: //left
-      player.isLeftKey = value;
-      e.preventDefault();
-      break;
+    switch (keyID) {
+      case 39:
+        player.move('right');
+        e.preventDefault();
+        break;
+      case 37:
+        player.move('left');
+        e.preventDefault();
+        break;
+    }
+  } else {
+    player.stop();
   }
 }
 
-function initGhosts() {
+function initGhost() {
   const ghost = new Ghost();
   ghosts.push(ghost);
 }
@@ -53,12 +57,8 @@ function updateAllghosts() {
       ghosts.splice(idx, 1);
     }
   });
-}
 
-function loop() {
-  player.checkDirection();
-  updateAllghosts();
-  window.requestAnimationFrame(loop);
+  window.requestAnimationFrame(updateAllghosts);
 }
 
 init();

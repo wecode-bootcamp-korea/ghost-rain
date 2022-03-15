@@ -3,21 +3,27 @@ class Hero {
     this.heroElement = document.getElementById('hero');
     this.left = Number(getComputedStyle(this.heroElement).left.split('px')[0]);
 
-    this.speed = 2;
+    this.speed = 10;
     this.isRightKey = false;
     this.isLeftKey = false;
   }
 
-  checkDirection() {
-    this.heroElement.className = 'face';
-
-    if (this.isRightKey) {
-      this.heroElement.className = 'right';
-      this.setLeft(-this.speed);
-    } else if (this.isLeftKey) {
-      this.heroElement.className = 'left';
-      this.setLeft(this.speed);
+  move(direction) {
+    switch (direction) {
+      case 'right':
+        this.heroElement.className = 'right';
+        this.setLeft(-this.speed);
+        break;
+      case 'left':
+        this.heroElement.className = 'left';
+        this.setLeft(this.speed);
+        break;
+      default:
     }
+  }
+
+  stop() {
+    this.heroElement.className = 'face';
   }
 
   setLeft(left) {
