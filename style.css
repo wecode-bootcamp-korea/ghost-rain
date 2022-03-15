@@ -9,3 +9,14 @@
 
   margin: 0 auto;
 }
+
+#hero {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+
+  width: 35px;
+  height: 54px;
+
+  background: url('./images/hero.png') no-repeat;
+}
