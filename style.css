@@ -20,3 +20,15 @@
 
   background: url('./images/hero.png') no-repeat;
 }
+
+#hero.face {
+  background-position: 0;
+}
+
+#hero.left {
+  background-position: -70px;
+}
+
+#hero.right {
+  background-position: -105px;
+}
