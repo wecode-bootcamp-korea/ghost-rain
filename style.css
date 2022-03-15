@@ -21,7 +21,7 @@
   background: url('./images/hero.png') no-repeat;
 }
 
-#hero.face {
+#hero.stop {
   background-position: 0;
 }
 
