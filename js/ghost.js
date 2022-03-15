@@ -22,14 +22,39 @@ function create() {
 function move() {
   enemyTop++;
 
-  if (enemyTop > BG_HEIGHT - GHOST_HEIGHT) {
-    ghostElement.remove();
-    return;
+  if (enemyTop > BG_HEIGHT - (HERO_HEIGHT + GHOST_HEIGHT)) {
+    const ghostLeft = Number(ghostElement.style.left.split('px')[0]);
+    const heroLeft = Number(heroElement.style.left.split('px')[0]);
+
+    if (heroLeft < ghostLeft + GHOST_WIDTH && heroLeft + HERO_WIDTH > ghostLeft) {
+      die();
+      return;
+    }
+
+    if (enemyTop > BG_HEIGHT - GHOST_HEIGHT) {
+      remove();
+      return;
+    }
   }
 
   ghostElement.style.top = enemyTop + 'px';
 
   window.requestAnimationFrame(move);
+}
+
+function remove() {
+  ghostElement.remove();
+}
+
+function die() {
+  ghostElement.style.backgroundPosition = '-45px';
+
+  const soundEffect = new Audio('./audio/dying.wav');
+  soundEffect.play();
+
+  setTimeout(() => {
+    remove();
+  }, 3000);
 }
 
 create();

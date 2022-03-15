@@ -21,12 +21,12 @@ function checkKey(e, isMoving) {
     switch (keyID) {
       case 39: //right
         heroElement.className = 'right';
-        setLeft(2);
+        setLeft(10);
         e.preventDefault();
         break;
       case 37: //left
         heroElement.className = 'left';
-        setLeft(-2);
+        setLeft(10);
         e.preventDefault();
         break;
     }
