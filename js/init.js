@@ -1,18 +1,24 @@
-document.addEventListener(
-  'keydown',
-  function (e) {
-    checkKey(e, true);
-  },
-  false
-);
+function init() {
+  document.addEventListener(
+    'keydown',
+    function (e) {
+      checkKey(e, true);
+    },
+    false
+  );
 
-document.addEventListener(
-  'keyup',
-  function (e) {
-    checkKey(e, false);
-  },
-  false
-);
+  document.addEventListener(
+    'keyup',
+    function (e) {
+      checkKey(e, false);
+    },
+    false
+  );
+
+  setInterval(function () {
+    create();
+  }, 2000);
+}
 
 function checkKey(e, isMoving) {
   if (isMoving) {
@@ -26,7 +32,7 @@ function checkKey(e, isMoving) {
         break;
       case 37: //left
         heroElement.className = 'left';
-        setLeft(10);
+        setLeft(-10);
         e.preventDefault();
         break;
     }
@@ -34,3 +40,5 @@ function checkKey(e, isMoving) {
     heroElement.className = 'stop';
   }
 }
+
+init();
