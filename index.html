@@ -2,17 +2,38 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Udemy - Ghost Rain</title>
+    <title>Ghost Rain</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="bg">
-      <span id="hero"></span>
+    <div class="music">
+      <audio class="audioContainer" autoplay>
+        <source src="./audio/Arcade_Kid.mp3" />
+      </audio>
     </div>
-
+    <div class="bar_upside">
+      <div class="bar_upside_left">
+        <img src="./images/timer.png" />
+        <span>27</span>
+      </div>
+      <div class="bar_upside_title">3</div>
+      <div class="bar_upside_right">
+        <img src="./images/hearts.png" class="icon_heart" />
+        <button class="icon_sOn"><img src="./images/sound_on.svg" /></button>
+        <button class="icon_sOff"><img src="./images/sound_off.svg" /></button>
+      </div>
+    </div>
+    <div class="game_main">
+      <div class="game_main_wrap">
+        <!-- <span class="hero"></span> -->
+        <img class="bg_image" src="./images/bg.png" />
+        <!-- <img class="ghost_def" src="./images/ghost_def.png" /> -->
+      </div>
+    </div>
     <script src="js/settings.js"></script>
     <script src="js/ghost.js"></script>
     <script src="js/hero.js"></script>
     <script src="js/init.js"></script>
+    <script src="js/sound.js"></script>
   </body>
 </html>

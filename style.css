@@ -1,0 +1,66 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Nabla&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+
+body {
+  margin: 0 auto;
+  background-color: rgb(45, 45, 45);
+  color: white;
+  font-family: "Silkscreen", cursive;
+}
+
+.bar_upside {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30px;
+}
+
+.bar_upside_left {
+  display: flex;
+  align-items: center;
+}
+
+.bar_upside_left img {
+  width: 30px;
+}
+
+.bar_upside_title {
+  /* font-family: "Nabla", cursive; */
+  /* font-family: "Silkscreen", cursive; */
+  font-size: 50px;
+}
+
+.bar_upside_right {
+  display: flex;
+}
+
+.icon_heart {
+  height: 100%;
+}
+
+.icon_sOn {
+  display: none;
+}
+
+.icon_sOff {
+  background: transparent;
+  border: none;
+  height: 100%;
+}
+
+.icon_sOff:hover {
+  cursor: pointer;
+}
+
+.game_main_wrap {
+  margin: 0 auto;
+}
+
+.bg_image {
+  display: flex;
+  justify-content: center;
+  width: 90vw;
+  height: 90vh;
+  margin: 0 auto;
+}
